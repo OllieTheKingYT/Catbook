@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catbook — Sign in</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #171922;
+      --text: #e9ecf1;
+      --muted: #a7b0c0;
+      --accent: #8bd3dd;
+      --accent2: #f7b267;
+      --border: #25293a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 20% 0%, #141826 0%, var(--bg) 60%);
+      color: var(--text);
+      min-height: 100dvh; display: grid; place-items: center; padding: 24px;
+    }
+    .card {
+      width: 100%; max-width: 420px; background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+    }
+    .logo {
+      width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: grid; place-items: center; font-weight: 700; color: #101217;
+    }
+    h1 { font-size: 1.25rem; margin: 0; }
+    p.sub { color: var(--muted); margin: 6px 0 18px; font-size: 0.95rem; }
+    label { display: block; font-size: 0.9rem; margin: 12px 2px 6px; color: var(--muted); }
+    input {
+      width: 100%; padding: 12px 14px; background: #10131b; border: 1px solid var(--border);
+      border-radius: 10px; color: var(--text); outline: none;
+    }
+    input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(139,211,221,0.15); }
+    .actions {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px;
+    }
+    a.btn {
+      display: inline-block; text-align: center; padding: 12px 14px; border-radius: 10px;
+      text-decoration: none; font-weight: 600; color: #0e1217; background: var(--accent);
+      border: 1px solid transparent;
+    }
+    a.btn.secondary {
+      background: transparent; color: var(--text); border-color: var(--border);
+    }
+    a.btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+    .foot {
+      margin-top: 14px; font-size: 0.85rem; color: var(--muted); text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="brand" aria-label="Catbook">
+      <div class="logo" aria-hidden="true">🐾</div>
+      <div>
+        <h1>Catbook</h1>
+        <p class="sub">Connect with cats you barely tolerate.</p>
+      </div>
+    </div>
+
+    <form aria-label="Sign in form" onsubmit="return false;">
+      <label for="email">Email or username</label>
+      <input id="email" name="email" type="text" placeholder="whiskers@catmail.com" autocomplete="username" />
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="••••••••" autocomplete="current-password" />
+
+      <div class="actions">
+        <a class="btn" href="home.html" aria-label="Log in and go to home">Log in</a>
+        <a class="btn secondary" href="home.html" aria-label="Sign up and go to home">Sign up</a>
+      </div>
+    </form>
+
+    <div class="foot">By proceeding, you agree to the Terms of Furvice.</div>
+  </main>
+</body>
+</html>
